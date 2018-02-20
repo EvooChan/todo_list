@@ -1,0 +1,118 @@
+body, html {
+     background-color: #FFDDFF
+}
+ #table .top {
+    width: 260px;
+	height: 19px;
+     margin-left: 40%;
+     margin-right: 40%;
+     border-top: 1px solid navy;
+     border-left: 1px solid navy;
+     color: black;
+     border-right: 1px solid navy;
+     background-color: #a3f0ee;
+     text-align: center;
+     padding: 10px;
+     font-family: arial;
+}
+
+ #table .top1 {
+	 background-color:#E8F5FE;
+	 width: 260px;
+	 height: 19px;
+     margin-left: 40%;
+     margin-right: 40%;
+     margin-top: 5%;
+     border-top: 1px solid navy;
+     border-left: 1px solid navy;
+     color: black;
+     border-right: 1px solid navy;
+     background-color: ;
+     text-align: center;
+     padding: 10px;
+     border-radius: 7px 7px 0 0;
+     font-family: arial;
+ }
+
+ #table .body {
+     width: 280px;
+	 height: 19px;
+     margin-left: 40%;
+     margin-right: 40%;
+     border-top: 1px solid navy;
+     border-left: 1px solid navy;
+     border-right: 1px solid navy;
+     background-color:  #cef5f4;
+     text-align: center;
+     padding: 10px 0px;
+}
+.bots {
+       border-top: px solid navy;
+     border-left: px solid navy;
+     border-right: px solid navy;
+    width: 282px;
+    height: 80px;
+    padding: px;
+    margin-left: 40%;
+    margin-right: 40%;
+    background-color:;
+}
+ .bot {
+    border: 1px solid navy;
+     background-color: #a3f0ee;
+     text-align: center;
+	 border-right: none;
+     padding: 10px;
+     border-radius: 0 0 0px 7px;
+     float: left;
+     width: 118px;
+	 height: 19px;
+     display: inline-block;
+     margin: 0 !important;
+}
+.bot1 {
+    border: 1px solid navy;
+     background-color: #a3f0ee;
+     text-align: center;
+     padding: 10px;
+     border-radius: 0 0 7px 0px;
+     float: right;
+     width: 121px;
+	 height: 19px;
+     display: inline-block;
+     margin: 0 !important;
+}
+ .text {
+     border: 0px;
+     width: 80%;
+     background-color: #cef5f4;
+ }
+ 
+ .radio, .radio1 {margin: 0;}
+ 
+ .button {
+	 width: 100%;
+	 heigt: 100%;
+	 background: #1C6EA4;
+     color: #FFFFFF;
+     padding: 2px 8px;
+     border-radius: 7px;
+     border: none;
+}
+
+.button:hover {
+	background: red;
+    color: #FFFFFF;
+    padding: 2px 8px;
+    border-radius: 7px;
+	border: none;
+}
+
+ #table .bot:hover, .bot1:hover {
+    color: green;
+     background-color: white;
+}
+ #table .body:hover {
+    color: green;
+     background-color: white;
+}
