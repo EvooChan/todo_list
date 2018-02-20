@@ -11,12 +11,12 @@ body, html {
     height:13px;
     margin:-1px 4px 0 0;
     vertical-align:middle;
-    background: black; border-radius: 20px;
+    background: url(unchecked.jpg);
     cursor:pointer;
 }
 
 [type="radio"]:checked + label span {
-    background:green; border-radius: 20px;
+    background:url(checked.jpg)
 }
 
   #table .top {
