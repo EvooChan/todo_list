@@ -1,9 +1,25 @@
 body, html {
      background-color: #FFDDFF
 }
- #table .top {
-    width: 260px;
-	height: 19px;
+ 
+  #table .top {
+	 background-color:#E8F5FE;
+	 width: 260px;
+	 height: 19px;
+     margin-left: 40%;
+     margin-right: 40%;
+     margin-top: 5%;
+     border-top: 1px solid navy;
+     border-left: 1px solid navy;
+     border-right: 1px solid navy;
+     background-color: ;
+     padding: 10px;
+     border-radius: 7px 7px 0 0;
+  }
+  
+ #table .top1 {
+     width: 260px;
+	 height: 19px;
      margin-left: 40%;
      margin-right: 40%;
      border-top: 1px solid navy;
@@ -15,25 +31,7 @@ body, html {
      padding: 10px;
      font-family: arial;
 }
-
- #table .top1 {
-	 background-color:#E8F5FE;
-	 width: 260px;
-	 height: 19px;
-     margin-left: 40%;
-     margin-right: 40%;
-     margin-top: 5%;
-     border-top: 1px solid navy;
-     border-left: 1px solid navy;
-     color: black;
-     border-right: 1px solid navy;
-     background-color: ;
-     text-align: center;
-     padding: 10px;
-     border-radius: 7px 7px 0 0;
-     font-family: arial;
- }
-
+    
  #table .body {
      width: 280px;
 	 height: 19px;
@@ -47,18 +45,18 @@ body, html {
      padding: 10px 0px;
 }
 .bots {
-       border-top: px solid navy;
+     border-top: px solid navy;
      border-left: px solid navy;
      border-right: px solid navy;
-    width: 282px;
-    height: 80px;
-    padding: px;
-    margin-left: 40%;
-    margin-right: 40%;
-    background-color:;
+     width: 282px;
+     height: 80px;
+     padding: px;
+     margin-left: 40%;
+     margin-right: 40%;
+     background-color:;
 }
  .bot {
-    border: 1px solid navy;
+     border: 1px solid navy;
      background-color: #a3f0ee;
      text-align: center;
 	 border-right: none;
@@ -71,7 +69,7 @@ body, html {
      margin: 0 !important;
 }
 .bot1 {
-    border: 1px solid navy;
+     border: 1px solid navy;
      background-color: #a3f0ee;
      text-align: center;
      padding: 10px;
@@ -101,18 +99,18 @@ body, html {
 }
 
 .button:hover {
-	background: red;
-    color: #FFFFFF;
-    padding: 2px 8px;
-    border-radius: 7px;
-	border: none;
+	 background: red;
+     color: #FFFFFF;
+     padding: 2px 8px;
+     border-radius: 7px;
+	 border: none;
 }
 
  #table .bot:hover, .bot1:hover {
-    color: green;
+     color: green;
      background-color: white;
 }
  #table .body:hover {
-    color: green;
+     color: green;
      background-color: white;
 }
