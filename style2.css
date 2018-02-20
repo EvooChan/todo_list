@@ -2,10 +2,10 @@ body, html {
      background-color: #FFDDFF
 }
  
- [type="radio"] {
+ .left {
     display:none;
 }
- [type="radio"] + label span {
+ .left + label span {
     display:inline-block;
     width:13px;
     height:13px;
@@ -15,8 +15,25 @@ body, html {
     cursor:pointer;
 }
 
-[type="radio"]:checked + label span {
+.left:checked + label span {
     background:url(checked.jpg)
+}
+
+ .right {
+    display:none;
+}
+ .right + label span {
+    display:inline-block;
+    width:13px;
+    height:13px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background: black; border-radius: 20px;
+    cursor:pointer;
+}
+
+.right:checked + label span {
+    background: green; border-radius: 20px;
 }
 
   #table .top {
@@ -32,6 +49,15 @@ body, html {
      background-color: ;
      padding: 10px;
      border-radius: 7px 7px 0 0;
+  }
+  
+  .toppic { 
+  display:inline-block;
+    width:13px;
+    height:13px;
+    
+    
+    background: green; border-radius: 20px;
   }
   
  #table .top1 {
