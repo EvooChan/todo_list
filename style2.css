@@ -46,17 +46,15 @@ body, html {
      border-top: 1px solid navy;
      border-left: 1px solid navy;
      border-right: 1px solid navy;
-     background-color: ;
      padding: 10px;
      border-radius: 7px 7px 0 0;
+	 font-family: arial;
   }
   
   .toppic { 
-  display:inline-block;
+    display:inline-block;
     width:13px;
     height:13px;
-    
-    
     background: green; border-radius: 20px;
   }
   
