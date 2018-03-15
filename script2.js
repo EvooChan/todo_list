@@ -1,7 +1,6 @@
 var todoElements = [];
 var obj = {};
 var tasks = '';
-var what = '';
 
 todoElements.check = function (){
 	this.forEach(function(element,index) {var radio = document.getElementsByName(index);
