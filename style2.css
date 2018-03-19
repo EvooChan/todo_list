@@ -2,10 +2,10 @@ body, html {
      background-color: #FFDDFF
 }
  
- .left {
+ .inProgress {
     display:none;
 }
- .left + label span {
+ .inProgress + label span {
     display:inline-block;
     width:13px;
     height:13px;
@@ -16,15 +16,15 @@ body, html {
     cursor:pointer;
 }
 
-.left:checked + label span {
+.inProgress:checked + label span {
 	align: left;
     background:url(checked.jpg)
 }
 
- .right {
+ .done {
     display:none;
 }
- .right + label span {
+ .done + label span {
     display:inline-block;
     width:13px;
     height:13px;
@@ -34,14 +34,14 @@ body, html {
     cursor:pointer;
 }
 
-.right:checked + label span {
+.done:checked + label span {
     background: green; border-radius: 20px;
 }
 
- .rr {
+ .delete {
     display:none;
 }
- .rr + label span {
+ .delete + label span {
     display:inline-block;
     width:13px;
     height:13px;
@@ -51,9 +51,6 @@ body, html {
     cursor:pointer;
 }
 
-.rr:checked + label span {
-    background: green; border-radius: 20px;
-}
 
   #table .top {
 	 background-color:#E8F5FE;
@@ -174,13 +171,6 @@ body, html {
      padding: 2px 8px;
      border-radius: 7px;
 	 border: none;
-}
-
-.del 
-{
-  margin: auto;
-  position: relative;
-  top: 0; left: 0; bottom: 0; right: 50;
 }
 
  #table .bot:hover, .bot1:hover {
