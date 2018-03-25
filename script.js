@@ -1,18 +1,27 @@
- var obj = {};
  var appData = {rows: todoElements=[], filter: 1}; 
 
 function Addiction() {	
     var text = document.getElementById('Task').value;
     if(text == "") {alert('Сначала напиши задание!')}
 	else {
-	obj = {text: text};
-    appData.rows.push(obj)
+	var obj = {text: text};
+	
+	if (localStorage.length == 0) {
+	   appData.rows.push(obj);
+	   var serialObj = JSON.stringify(appData)
+	   }
+	   else {var returnObj = JSON.parse(localStorage.getItem("myKey"));appData = returnObj; console.log(appData);appData.rows.push(obj); var serialObj = JSON.stringify(appData)};
+	localStorage.setItem("myKey", serialObj);
+    var returnObj = JSON.parse(localStorage.getItem("myKey"));
 	render();}
 }
 
-function inProgress(){appData.rows[this.id].done='in progress';};
-function done(){var a=(this.id-'1')/10;appData.rows[a].done='done';};
-function del(){var a=(this.id-'2')/10;appData.rows.splice(a,1); render();};
+function inProgress(){appData.rows[this.id].done='in progress';
+                      var serialObj = JSON.stringify(appData); localStorage.setItem("myKey", serialObj); render()};
+function done(){var a=(this.id-'1')/10;appData.rows[a].done='done';
+                var serialObj = JSON.stringify(appData); localStorage.setItem("myKey", serialObj); render()};
+function del(){var a=(this.id-'2')/10;appData.rows.splice(a,1); if(appData.rows.length==0){appData.filter=1};
+               var serialObj = JSON.stringify(appData); localStorage.setItem("myKey", serialObj); render()};
 
 function filterBy() {
 	var filter = document.getElementById("Filter").options.selectedIndex;
@@ -48,9 +57,7 @@ function filterBy() {
 	   top1.innerHTML ='To Do List';
 	   top2.className = 'top1';
 	   top2.appendChild(select);
-	   
-	  
-	   
+	      
   while (table.firstChild.className != 'bots') {table.removeChild(table.firstChild)};
 	   table.insertBefore(top2, bot);
 	   table.insertBefore(top1, top2);
@@ -132,7 +139,17 @@ function filterBy() {
 	}
   }) 
         document.getElementById('Filter').addEventListener("change", filterBy, false);  
-        document.getElementById('Task').value = '';  
+        if(document.getElementById('Task')) {document.getElementById('Task').value = '';}; 
  }
- 
-        document.getElementById("add").addEventListener("click", Addiction, false);
+function Clear() {localStorage.clear()};
+
+        document.getElementById('clear').addEventListener("click",Clear, false);
+    if(document.getElementById("add")) {document.getElementById("add").addEventListener("click", Addiction, false)};
+	
+function render1() {
+	var returnObj = JSON.parse(localStorage.getItem("myKey"));appData = returnObj; var serialObj = JSON.stringify(appData);
+	localStorage.setItem("myKey", serialObj);
+    var returnObj = JSON.parse(localStorage.getItem("myKey"));
+	render();
+};
+    if(localStorage.getItem('myKey')!=null) {render1(); console.log('rendered');}
