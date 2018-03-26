@@ -10,18 +10,19 @@ function Addiction() {
 	   appData.rows.push(obj);
 	   var serialObj = JSON.stringify(appData)
 	   }
-	   else {var returnObj = JSON.parse(localStorage.getItem("myKey"));appData = returnObj; console.log(appData);appData.rows.push(obj); var serialObj = JSON.stringify(appData)};
+	   else {var returnObj = JSON.parse(localStorage.getItem("myKey"));appData = returnObj; appData.rows.push(obj); var serialObj = JSON.stringify(appData)};
 	localStorage.setItem("myKey", serialObj);
     var returnObj = JSON.parse(localStorage.getItem("myKey"));
 	render();}
 }
 
-function inProgress(){appData.rows[this.id].done='in progress';
-                      var serialObj = JSON.stringify(appData); localStorage.setItem("myKey", serialObj); render()};
-function done(){var a=(this.id-'1')/10;appData.rows[a].done='done';
-                var serialObj = JSON.stringify(appData); localStorage.setItem("myKey", serialObj); render()};
-function del(){var a=(this.id-'2')/10;appData.rows.splice(a,1); if(appData.rows.length==0){appData.filter=1};
-               var serialObj = JSON.stringify(appData); localStorage.setItem("myKey", serialObj); render()};
+function inProgress(){appData.rows[this.id].done='in progress'; var serialObj = JSON.stringify(appData); localStorage.setItem("myKey", serialObj); render()};
+function done(){var a=(this.id-'1')/10; appData.rows[a].done='done'; var serialObj = JSON.stringify(appData); localStorage.setItem("myKey", serialObj); render()};
+function del(){
+	           var a=(this.id-'2')/10; var isDel = confirm("Удалить это задание?");
+               if (isDel==true){appData.rows.splice(a,1); if(appData.rows.length==0){appData.filter=1}};
+               var serialObj = JSON.stringify(appData); localStorage.setItem("myKey", serialObj); render();
+			   };
 
 function filterBy() {
 	var filter = document.getElementById("Filter").options.selectedIndex;
@@ -147,7 +148,10 @@ function Clear() {localStorage.clear()};
     if(document.getElementById("add")) {document.getElementById("add").addEventListener("click", Addiction, false)};
 	
 function render1() {
-	var returnObj = JSON.parse(localStorage.getItem("myKey"));appData = returnObj; var serialObj = JSON.stringify(appData);
+	var returnObj = JSON.parse(localStorage.getItem("myKey")); 
+	appData = returnObj;
+	appData.filter=1;
+	var serialObj = JSON.stringify(appData);
 	localStorage.setItem("myKey", serialObj);
     var returnObj = JSON.parse(localStorage.getItem("myKey"));
 	render();
