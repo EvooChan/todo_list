@@ -23,7 +23,12 @@ function del(){
                if (isDel==true){appData.rows.splice(a,1); if(appData.rows.length==0){appData.filter=1}};
                var serialObj = JSON.stringify(appData); localStorage.setItem("myKey", serialObj); render();
 			   };
-
+function change(){
+	           var a=(this.id-'3')/10; var newText = prompt("Изменить задание",appData.rows[a].text); 
+                if(newText != null) {appData.rows[a].text = newText}; var serialObj = JSON.stringify(appData);
+				localStorage.setItem("myKey", serialObj); render();
+};
+			   
 function filterBy() {
 	var filter = document.getElementById("Filter").options.selectedIndex;
 	appData.filter = filter;
@@ -70,6 +75,7 @@ function filterBy() {
 	var radio = document.createElement("input");
 	var radio1 = document.createElement("input");
 	var radio2 = document.createElement("input");
+	var changeb = document.createElement("input");
 	var label = document.createElement("label");
 	var label1 = document.createElement("label");
 	var label2 = document.createElement("label");
@@ -93,6 +99,11 @@ function filterBy() {
 	   radio2.id = index+'2';
 	   radio2.className = "delete";
 	   
+	   changeb.type = "radio";
+	   changeb.name = index;
+	   changeb.id = index+'3';
+	   changeb.className = "change";
+	   
 	   newDiv.className = 'body';
 	   spanT.className = 'eltext';
 	   
@@ -109,6 +120,7 @@ function filterBy() {
 	   spanT.appendChild(label1);
 	   spanT.appendChild(radio2);
 	   spanT.appendChild(label2);
+	   spanT.appendChild(changeb);
 	   
 	if (appData.filter == 2) {
 	   if(element.done == 'in progress'){
@@ -118,6 +130,7 @@ function filterBy() {
 	    document.getElementById(index).addEventListener("click", inProgress, false);
         document.getElementById(index+'1').addEventListener("click", done, false);
         document.getElementById(index+'2').addEventListener("click", del, false);
+		document.getElementById(index+'3').addEventListener("click", change, false);
 	   }
 	}
 	else if (appData.filter == 3) {
@@ -128,6 +141,7 @@ function filterBy() {
 	    document.getElementById(index).addEventListener("click", inProgress, false);
         document.getElementById(index+'1').addEventListener("click", done, false);
         document.getElementById(index+'2').addEventListener("click", del, false);
+		document.getElementById(index+'3').addEventListener("click", change, false);
 	   }
 	}
 	else if (appData.filter == 1) {
@@ -137,10 +151,11 @@ function filterBy() {
 	    document.getElementById(index).addEventListener("click", inProgress, false);
         document.getElementById(index+'1').addEventListener("click", done, false);
         document.getElementById(index+'2').addEventListener("click", del, false);
+		document.getElementById(index+'3').addEventListener("click", change, false);
 	}
   }) 
         document.getElementById('Filter').addEventListener("change", filterBy, false);  
-        if(document.getElementById('Task')) {document.getElementById('Task').value = '';}; 
+    if(document.getElementById('Task')) {document.getElementById('Task').value = '';}; 
  }
 function Clear() {localStorage.clear()};
 
